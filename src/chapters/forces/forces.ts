@@ -1,29 +1,7 @@
 import P5 from "p5";
 
 let dragging: Mover | undefined = undefined;
-// class Abstractor {
-//   constructor(
-//     public p5: P5,
-//     public position: P5.Vector = p5.createVector(),
-//     public mass: number = 20,
-//   ) {}
-//
-//   show() {
-//     this.p5.stroke(0);
-//     this.p5.fill(175, 200);
-//     this.p5.circle(this.position.x, this.position.y, this.mass * 2);
-//   }
-//
-//   attract(mover: Mover) {
-//     const force = this.position.copy().sub(mover.position);
-//     let distance = force.mag();
-//     distance = this.p5.constrain(distance, 5.0, 25.0);
-//     force.normalize();
-//     const strength = (0.4 * this.mass * mover.mass) / (distance * distance);
-//     force.mult(strength);
-//     return force;
-//   }
-// }
+
 export class Mover {
   protected p5: P5;
   position: P5.Vector;

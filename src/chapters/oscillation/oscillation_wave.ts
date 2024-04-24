@@ -23,15 +23,19 @@ export class Wave {
 
 const sketch = (p5: P5) => {
   let waves: Wave[] = [];
-  let spacing = 5;
   let add_button: P5.Element;
   let remove_button: P5.Element;
+  let diameter_slider: P5.Element;
+  let spacing_slider: P5.Element;
+
   p5.setup = () => {
     p5.createCanvas(800, 800);
     p5.frameRate(60);
 
     add_button = p5.createButton("Add Wave");
     remove_button = p5.createButton("Remove Wave");
+    diameter_slider = p5.createSlider(1, 50, 5, 0.5);
+    spacing_slider = p5.createSlider(1, 50, 5, 0.5);
 
     add_button.mouseClicked(() => {
       waves.push(
@@ -63,19 +67,21 @@ const sketch = (p5: P5) => {
 
   p5.draw = () => {
     p5.background(155, 0, 155);
+    const spacing = +spacing_slider.value();
+    const d = +diameter_slider.value();
 
-    for (let x = 0; x < p5.width; x += spacing) {
+    for (let x = 0; x < p5.width + d; x += spacing) {
       let y = 0;
       for (let wave of waves) {
         y += wave.evaluate(x) / waves.length;
         let wave_y = wave.evaluate(x);
         p5.noStroke();
         p5.fill(0, 50);
-        p5.circle(x, wave_y + p5.height / 2, spacing);
+        p5.circle(x, wave_y + p5.height / 2, d);
       }
       p5.noStroke();
       p5.fill(255);
-      p5.circle(x, y + p5.height / 2, spacing);
+      p5.circle(x, y + p5.height / 2, d);
     }
 
     for (let wave of waves) {

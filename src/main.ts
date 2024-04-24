@@ -8,7 +8,8 @@ import P5 from "p5";
 // import forces from "./chapters/forces";
 // import oscillation from "./chapters/oscillation";
 // import spiral from "./chapters/oscillation_spiral";
-import wave from "./chapters/oscillation_wave";
+// import wave from "./chapters/oscillation/oscillation_wave";
+import spring from "./chapters/oscillation/spring_forces";
 
 // Creating the sketch itself
-new P5(wave);
+new P5(spring);
