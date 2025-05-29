@@ -40,7 +40,7 @@ class Baton {
     this.angularAcceleration += f;
   }
 }
-import { Mover } from "./forces";
+import { Mover } from "../forces/forces";
 class Spaceship extends Mover {
   public angle: number = 0;
   public highlighted: boolean = false;

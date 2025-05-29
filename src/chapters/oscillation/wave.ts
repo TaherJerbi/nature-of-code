@@ -29,7 +29,7 @@ const sketch = (p5: P5) => {
   let spacing_slider: P5.Element;
 
   p5.setup = () => {
-    p5.createCanvas(800, 800);
+    p5.createCanvas(window.innerWidth, window.innerHeight);
     p5.frameRate(60);
 
     add_button = p5.createButton("Add Wave");

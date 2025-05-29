@@ -79,7 +79,7 @@ const sketch = (p5: P5) => {
 
   let number_of_movers_slider: P5.Element;
   p5.setup = () => {
-    p5.createCanvas(800, 1600);
+    p5.createCanvas(window.innerWidth, window.innerHeight);
     p5.frameRate(120);
 
     number_of_movers_slider = p5.createSlider(2, 800, 800, 1);
